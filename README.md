@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# El Rincon del Mate 🧉
+# El Rincon del Mati 🧉
 
 Sistema de gestión para una cafetería con enfoque DevSecOps.
 
