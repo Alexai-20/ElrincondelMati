@@ -22,3 +22,6 @@ jobs:
 
   - name: Analisis vulnerabilidades Trivy
     uses: aquasecurity/trivy-action@master
+    with:
+     scan-type: fs
+     scan-ref: .
