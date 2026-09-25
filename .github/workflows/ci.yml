@@ -1,27 +1,27 @@
 name: CI Security
 
 on:
- push:
-  branches: [main]
+  push:
+    branches: [main]
 
 jobs:
- seguridad:
-  runs-on: ubuntu-latest
+  seguridad:
+    runs-on: ubuntu-latest
 
-  steps:
-  - uses: actions/checkout@v4
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
-  - name: Instalar dependencias
-    run: npm install
+    - name: Instalar dependencias
+      run: npm install --ignore-scripts
 
-  - name: Ejecutar pruebas
-    run: npm test
+    - name: Ejecutar pruebas
+      run: npm test
 
-  - name: Analisis secretos Gitleaks
-    uses: gitleaks/gitleaks-action@v2
+    - name: Analisis secretos Gitleaks
+      uses: gitleaks/gitleaks-action@v2
 
-  - name: Analisis vulnerabilidades Trivy
-    uses: aquasecurity/trivy-action@master
-    with:
-     scan-type: fs
-     scan-ref: .
+    - name: Analisis vulnerabilidades Trivy
+      uses: aquasecurity/trivy-action@v0.28.0
+      with:
+        scan-type: fs
+        scan-ref: .
