@@ -12,16 +12,16 @@ jobs:
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
     - name: Instalar dependencias
-      run: npm install --ignore-scripts
+      run: npm ci --ignore-scripts
 
     - name: Ejecutar pruebas
       run: npm test
 
     - name: Analisis secretos Gitleaks
-      uses: gitleaks/gitleaks-action@v2
+      uses: gitleaks/gitleaks-action@a6e0c5f1b5a8d3b1e0c9b4b2b4c6c2d5a7f9e8d1
 
     - name: Analisis vulnerabilidades Trivy
-      uses: aquasecurity/trivy-action@v0.28.0
+      uses: aquasecurity/trivy-action@0f6c3c7e9f6d8b4c2a1e9d7f5c3b1a8e6d4f2c0b
       with:
         scan-type: fs
         scan-ref: .
