@@ -1,0 +1,19 @@
+name: Semgrep Analysis
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  semgrep:
+    name: Escaneo Semgrep
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar código
+        uses: actions/checkout@v3
+        
+      - name: Ejecutar Semgrep CI
+        uses: returntocorp/semgrep-action@v1
+        with:
+          config: "auto"
