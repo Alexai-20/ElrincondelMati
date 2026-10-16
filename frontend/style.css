@@ -1,13 +1,19 @@
-body{
-font-family:Arial;
-background:#f4efe8;
-text-align:center;
+button {
+    background-color: #6b4226;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-h1{
-color:#5b3825;
+button:hover {
+    background-color: #4b2e18;
 }
 
-li{
-margin:10px;
+input {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
